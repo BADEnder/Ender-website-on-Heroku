@@ -54,15 +54,15 @@
 
     <!-- second Part -->
     <section class="bg-light">
-        <div class="container overflow-auto" >
+        <div class="container" >
             <div class="d-md-flex justify-content-between m-3 ">
                 <div class="col-md-3 border rounded-2 p-3 m-1 ">
                     <div class="h3 text-danger"> Title</div>
 
                     <div v-for="(article, idx) in articles">
                         <a href="#content" @click="changeContent(article.id)" class="btn btn-outline-primary m-2" >
-                            <div>{{article.time}}</div>
-                            <div>{{article.title}}</div>
+                            <div class="text-break">{{article.time}}</div>
+                            <div class="text-break">{{article.title}}</div>
                             
                         </a>
                     </div>
@@ -71,7 +71,7 @@
                 <div class="col-md-9 border rounded-2 p-3 m-1" > 
                     <div id="content" class="h3 text-warning">Content</div>
                     <div v-if="!articleContent" class="lead text-success"> Welcome, This is one page for personal website </div>
-                    <div style="white-space:pre">{{articleContent}}</div>
+                    <div class="text-break" style="white-space:pre-wrap">{{articleContent}}</div>
                     
                 </div>
             </div>
@@ -89,11 +89,11 @@
 
                     <div class="text-bg-dark border rounded-3 p-4" id="comment">
                         <div class="border border-primary rounded-3 p-2 mb-4" v-for="(comment, idx) in comments">
-                            <div class="card-title"> <span class="h5 text-warning"> No.{{comment.id}} </span> </div><hr>
-                            <div class="card-title"> <span class="h5 text-warning"> Name: </span> {{comment.name}}</div><hr>
-                            <div class="card-title"> <span class="h5 text-warning"> Email: </span> {{comment.email}}</div><hr>
-                            <div class="card-title"> <span class="h5 text-warning"> time: </span> {{comment.time}}</div><hr>
-                            <div class="card-text" style="white-space:pre"> <span class="h5 text-warning"> Message:  </span><br>  {{comment.message}}</div>
+                            <div class="card-title text-break"> <span class="h5 text-warning"> No.{{comment.id}} </span> </div><hr>
+                            <div class="card-title text-break"> <span class="h5 text-warning"> Name: </span> {{comment.name}}</div><hr>
+                            <div class="card-title text-break"> <span class="h5 text-warning"> Email: </span> {{comment.email}}</div><hr>
+                            <div class="card-title text-break"> <span class="h5 text-warning"> Time: </span> {{comment.time}}</div><hr>
+                            <div class="card-text text-break" style="white-space:pre-wrap" > <span class="h5 text-warning"> Message:  </span><br>  {{comment.message}}</div>
                         </div>
                     </div>
 

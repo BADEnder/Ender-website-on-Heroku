@@ -1,7 +1,9 @@
 const express = require('express')
 const path = require('path')
-const PORT = process.env.PORT || 5000
 const app = express()
+
+const IP = process.env.IP || '127.0.0.1'
+const PORT = process.env.PORT || 5000
 
 app.use(express.urlencoded({extended: false}))
 app.use(express.json())
@@ -28,4 +30,6 @@ app.all('*', (req, res) => {
   
 
 
-app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
+app.listen(PORT, IP, () => {
+console.log(`Server is running on http://${IP}:${ PORT }`)
+})
