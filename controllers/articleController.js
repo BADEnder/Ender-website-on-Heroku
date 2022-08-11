@@ -41,33 +41,6 @@ const postArticle = async (req, res) => {
 
 }
 
-const updataArticle = async (req, res) => {
-    try{
-
-        const newData = {
-            id: req.body.id,
-            title : req.body.title,
-            content : req.body.content,
-            time : `${format(new Date(), 'yyyyMMdd\tHH:mm:ss')}`
-        }
-        
-        articles.setData([...articles.data, newData])
-        
-
-
-        res.json([
-            {
-                "message" : "Post success!"
-            }
-        ])
-    }catch(err){
-        res.json([
-            {
-                "message" : "Post failed!"
-            }
-        ])
-    }
-}
 
 
 module.exports = {getArticles, postArticle}

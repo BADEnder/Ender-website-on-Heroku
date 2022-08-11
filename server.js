@@ -30,6 +30,6 @@ app.all('*', (req, res) => {
   
 
 
-app.listen(PORT, IP, () => {
-console.log(`Server is running on http://${IP}:${ PORT }`)
+app.listen(PORT, () => {
+console.log(`Server is running on ${ PORT }`)
 })
